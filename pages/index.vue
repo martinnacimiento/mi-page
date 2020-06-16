@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-parallax(:src="martin")
+  v-parallax(:src="martin" height="550")
     v-row(
       align="center"
       justify="center"
