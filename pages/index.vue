@@ -7,6 +7,7 @@
       v-col(cols="12" class="text-center")
         .letter Nacimiento Martin
         .subheading Estoy construyendo este sitio aun
+          v-icon(color="yellow darken-2") mdi-tools
 </template>
 
 <script>
