@@ -13,13 +13,19 @@
 import martin from '@/assets/img/martin.jpg'
 
 export default {
+  head () {
+    return {
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap' }
+      ]
+    }
+  },
   data: () => ({
     martin: martin
   })
 }
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .letter {
   font-family: 'Permanent Marker', cursive;
   font-size: 50px;
