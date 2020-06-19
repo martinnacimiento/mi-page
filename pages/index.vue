@@ -1,36 +1,41 @@
 <template lang="pug">
-  v-parallax(:src="martin" height="550")
-    v-row(
-      align="center"
-      justify="center"
+  div
+    v-parallax(
+      :srcset="martin + ' 1080w'" 
+      sizes="(max-widt: 2000px) 800px"
+      :src="martin"
+      height="550"
     )
-      v-col(cols="12" class="text-center")
-        .letter Nacimiento Martin
-        .subheading Estoy construyendo este sitio aun
-          v-icon(color="yellow darken-2") mdi-tools
+      v-row(
+        align="center"
+        justify="center"
+      )
+        v-col(cols="12" class="text-center")
+          .letter MN
+          .subletter Estoy construyendo este sitio aun
+            v-icon(color="yellow darken-2") mdi-tools
 </template>
 
 <script>
-import martin from '@/assets/img/martin.jpg'
+import martin from '@/assets/img/martin2.jpg'
 
 export default {
-  head () {
-    return {
-      link: [
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap' }
-      ]
-    }
-  },
   data: () => ({
     martin: martin
   })
 }
 </script>
 <style scoped>
+
+@font-face {
+  font-family: 'piolon';
+  src: url('~static/fonts/Noir_regular.otf') format('opentype');
+}
 .letter {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'piolon';
   font-size: 50px;
-  align-content: center;
-  justify-content: center;
+}
+.subletter {
+  font-family: 'piolon';
 }
 </style>
