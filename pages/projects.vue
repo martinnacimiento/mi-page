@@ -2,8 +2,9 @@
   v-row
     v-col(v-for="p in projects" :key="p.name" cols="12" sm="12" md="4")
       v-card(
-        class="mx-auto"
+        class="rounded-lg"
         max-width="344"
+        :elevation="12"
       )
         v-img(v-if="p.image" :src="p.image" height="300px")
         v-card-title {{ p.name }}
@@ -30,7 +31,7 @@ export default {
       {
         name: 'CV',
         image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/1xtq7tjalwl9vzu8j2du.png',
+          'https://dev-to-uploads.s3.amazonaws.com/i/5n60lff4i7t4cuv29yxn.png',
         description: 'Es mi curriculum vitae hecho con Vue y Vuetify',
         link: 'https://github.com/martinnacimiento/cv',
         url: 'https://martinnacimiento.github.io/cv/',
@@ -62,7 +63,7 @@ export default {
       {
         name: 'Mi anterior web',
         image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/ldwr7oyt5gxluzrpqpve.png',
+          'https://dev-to-uploads.s3.amazonaws.com/i/nh25g914n21kxmwa6pp4.png',
         description:
           'Esta fue mi primer web implementada con Bulma CSS y VueJs.',
         link: 'https://github.com/martinnacimiento/about-me',

@@ -5,6 +5,7 @@
       sizes="(max-widt: 2000px) 800px"
       :src="martin"
       height="550"
+      class="rounded-lg"
     )
       v-row(
         align="start"
