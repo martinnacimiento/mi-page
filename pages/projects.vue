@@ -2,7 +2,7 @@
   v-row
     v-col(v-for="p in projects" :key="p.name" cols="12" sm="12" md="4")
       v-card(
-        class="rounded-lg"
+        class="rounded-lg mx-auto"
         max-width="344"
         :elevation="12"
       )
