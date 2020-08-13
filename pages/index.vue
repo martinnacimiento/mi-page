@@ -12,6 +12,11 @@
       )
         v-col(cols="12" class="text-center")
           .letter MN
+      v-row(
+        align="end"
+        justify="center"
+      )
+        v-col(cols="12" class="text-center")
           v-btn(fab small @click="href('https://github.com/martinnacimiento')").mr-2
             v-icon mdi-github
           v-btn(fab small @click="href('https://www.linkedin.com/in/martinnacimiento/')").mr-2
