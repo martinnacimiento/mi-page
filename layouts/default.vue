@@ -14,6 +14,13 @@
         v-icon mdi-dots-vertical
 
       v-toolbar-title(v-text='title')
+
+      v-spacer
+      v-tooltip(bottom)
+        template(#activator="{on}")
+          v-btn(fab small @click='modeDark = !modeDark' v-on="on").mr-2
+            v-icon mdi-theme-light-dark
+        span Modo noche
     v-main
       v-container(fluid)
         nuxt
@@ -29,6 +36,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      modeDark: true,
       items: [
         {
           icon: 'mdi-apps',
@@ -45,6 +53,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Nacimiento Martin'
+    }
+  },
+  watch: {
+    modeDark(value) {
+      this.$vuetify.theme.dark = value
     }
   }
 }

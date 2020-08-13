@@ -12,21 +12,29 @@
       )
         v-col(cols="12" class="text-center")
           .letter MN
-          .subletter Estoy construyendo este sitio aun
-            v-icon(color="yellow darken-2") mdi-tools
+          v-btn(fab small @click="href('https://github.com/martinnacimiento')").mr-2
+            v-icon mdi-github
+          v-btn(fab small @click="href('https://www.linkedin.com/in/martinnacimiento/')").mr-2
+            v-icon mdi-linkedin
+          v-btn(fab small @click="href('https://dev.to/martinnacimiento')").mr-2
+            v-icon mdi-dev-to
 </template>
 
 <script>
-import martin from '@/assets/img/martin2.jpg'
+import Martin from '@/assets/img/martin.jpg'
 
 export default {
   data: () => ({
-    martin: martin
-  })
+    martin: Martin
+  }),
+  methods: {
+    href(url) {
+      window.open(url, '_black')
+    }
+  }
 }
 </script>
 <style scoped>
-
 @font-face {
   font-family: 'piolon';
   src: url('~static/fonts/Noir_regular.otf') format('opentype');
