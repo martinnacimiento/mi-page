@@ -13,7 +13,7 @@
       v-btn(fab small @click.stop='drawer = !drawer').mr-2
         v-icon mdi-dots-vertical
 
-      v-toolbar-title(v-text='title')
+      v-toolbar-title(v-text='title').letter
 
       v-spacer
       v-tooltip(bottom)
@@ -26,7 +26,7 @@
         nuxt
           
     v-footer(:fixed='fixed' app)
-      span Nacimiento Martin © {{ new Date().getFullYear() }}
+      span.subletter Nacimiento Martin © {{ new Date().getFullYear() }}
 </template>
 
 <script>
@@ -62,3 +62,16 @@ export default {
   }
 }
 </script>
+<style scoped>
+@font-face {
+  font-family: 'piolon';
+  src: url('~static/fonts/Noir_regular.otf') format('opentype');
+}
+.letter {
+  font-family: 'piolon';
+  font-size: 25px;
+}
+.subletter {
+  font-family: 'piolon';
+}
+</style>
