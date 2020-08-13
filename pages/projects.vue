@@ -70,6 +70,39 @@ export default {
         url: 'https://martinnacimiento.github.io/',
         status: 'En producción',
         show: false
+      },
+      {
+        name: 'Contratos - Frontend',
+        image:
+          'https://dev-to-uploads.s3.amazonaws.com/i/otmmhmsxxx4z8vqcyn7u.png',
+        description:
+          'Proyecto de contratos que estoy realizando para la cátedra de Diseño y Aplicaciones en la Web. Este es su front-end. En este proyecto uso Nuxt.js y Vuetify.',
+        link: 'https://github.com/martinnacimiento/contratos-front-2020',
+        url: 'https://contratos.netlify.app/',
+        status: 'En producción',
+        show: false
+      },
+      {
+        name: 'Contratos - Backend',
+        image:
+          'https://dev-to-uploads.s3.amazonaws.com/i/xh9tuxs4xyjsvi924xd9.png',
+        description:
+          'Proyecto de contratos que estoy realizando para la cátedra de Diseño y Aplicaciones en la Web. Este es su back-end. En este proyecto uso Express.js y JWT para la seguridad.',
+        link: 'https://github.com/martinnacimiento/contratos-back-2020',
+        url: 'https://contratos.netlify.app/',
+        status: 'En producción',
+        show: false
+      },
+      {
+        name: 'Generador - Backend',
+        image:
+          'https://dev-to-uploads.s3.amazonaws.com/i/snxdwl2efhw1v58qjdyq.png',
+        description:
+          'Proyecto que consiste en la generación de números pseudoaleatorios y simulación de una represa. Lo realice con mi compañera de grupo Senghaas Evelin para la cátedra Modelos y Simulación, con el backend implementado con Flask. Es proyecto esta implementado con Vue.js, Vuetify, y un poco de Vuesax.',
+        link: 'https://github.com/martinnacimiento/generador-front',
+        url: 'https://generador.netlify.app/',
+        status: 'En producción',
+        show: false
       }
     ]
   }),

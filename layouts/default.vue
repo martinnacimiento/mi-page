@@ -36,7 +36,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      modeDark: true,
+      modeDark: false,
       items: [
         {
           icon: 'mdi-apps',
