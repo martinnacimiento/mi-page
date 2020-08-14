@@ -7,6 +7,9 @@
         :elevation="12"
       )
         v-img(v-if="p.image" :src="p.image" height="300px")
+          template(#placeholder)
+            v-row(class="fill-height ma-0" align="center" justify="center")
+              v-progress-circular(indeterminate color="black lighten-5")
         v-card-title {{ p.name }}
         v-card-subtitle {{ p.status }}
         v-card-actions
