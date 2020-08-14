@@ -23,7 +23,8 @@
         span Modo noche
     v-main
       v-container(fluid)
-        nuxt
+        v-slide-x-transition
+          nuxt
           
     v-footer(:fixed='fixed' app)
       span.subletter Nacimiento Martin © {{ new Date().getFullYear() }}
