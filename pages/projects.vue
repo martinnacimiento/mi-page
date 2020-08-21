@@ -1,5 +1,12 @@
 <template lang="pug">
   v-row
+    v-col(v-if="$fetchState.pending" v-for="index in 10" :key="index" cols="12" sm="12" md="4")
+      v-skeleton-loader(
+        class="mx-auto rounded-lg"
+        max-width="344"
+        type="card, list-item-two-line, actions"
+        :elevation="12"
+      )
     v-col(v-for="p in projects" :key="p.name" cols="12" sm="12" md="4")
       v-card(
         class="rounded-lg mx-auto"
@@ -29,85 +36,12 @@
 <script>
 export default {
   name: 'projects',
+  async fetch() {
+    const snap = await this.$fireStore.collection('projects').get()
+    this.projects = await snap.docs.map((p) => p.data())
+  },
   data: () => ({
-    projects: [
-      {
-        name: 'CV',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/5n60lff4i7t4cuv29yxn.png',
-        description: 'Es mi curriculum vitae hecho con Vue y Vuetify',
-        link: 'https://github.com/martinnacimiento/cv',
-        url: 'https://martinnacimiento.github.io/cv/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Crypto Exchange',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/1jj6yt53xc8zav8uwhsb.png',
-        description:
-          'Proyecto para obtener las cotizaciones de las cryptomonedas mas importantes a través de la API REST de Coincap.',
-        link: 'https://github.com/martinnacimiento/platzi-exchange',
-        url: 'https://cryptoxchange.netlify.com/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Octolion Ecommerce',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/c1naohq32qqx32qe9sv1.png',
-        description:
-          'Proyecto ecommerce para visualizar y ver detalles de productos, con CRUD a través de API RESTful.',
-        link: 'https://github.com/martinnacimiento/api-restful-express.js',
-        url: 'https://octolion.martinnacimiento98.now.sh/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Mi anterior web',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/nh25g914n21kxmwa6pp4.png',
-        description:
-          'Esta fue mi primer web implementada con Bulma CSS y VueJs.',
-        link: 'https://github.com/martinnacimiento/about-me',
-        url: 'https://martinnacimiento.github.io/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Contratos - Frontend',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/otmmhmsxxx4z8vqcyn7u.png',
-        description:
-          'Proyecto de contratos que estoy realizando para la cátedra de Diseño y Aplicaciones en la Web. Este es su front-end. En este proyecto uso Nuxt.js y Vuetify.',
-        link: 'https://github.com/martinnacimiento/contratos-front-2020',
-        url: 'https://contratos.netlify.app/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Contratos - Backend',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/xh9tuxs4xyjsvi924xd9.png',
-        description:
-          'Proyecto de contratos que estoy realizando para la cátedra de Diseño y Aplicaciones en la Web. Este es su back-end. En este proyecto uso Express.js y JWT para la seguridad.',
-        link: 'https://github.com/martinnacimiento/contratos-back-2020',
-        url: 'https://contratos.netlify.app/',
-        status: 'En producción',
-        show: false
-      },
-      {
-        name: 'Generador - Backend',
-        image:
-          'https://dev-to-uploads.s3.amazonaws.com/i/snxdwl2efhw1v58qjdyq.png',
-        description:
-          'Proyecto que consiste en la generación de números pseudoaleatorios y simulación de una represa. Lo realice con mi compañera de grupo Senghaas Evelin para la cátedra Modelos y Simulación, con el backend implementado con Flask. Es proyecto esta implementado con Vue.js, Vuetify, y un poco de Vuesax.',
-        link: 'https://github.com/martinnacimiento/generador-front',
-        url: 'https://generador.netlify.app/',
-        status: 'En producción',
-        show: false
-      }
-    ]
+    projects: []
   }),
   methods: {
     href(url) {
